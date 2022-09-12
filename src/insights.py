@@ -9,7 +9,7 @@ def get_unique_job_types(path):
             jobs_title.append(row['job_type'])
             full_time = jobs_title.count('FULL_TIME')
             part_time = jobs_title.count('PART_TIME')
-            obj = {'FULL_TIME': full_time, 'PART_TIME': part_time  }
+            obj = {'FULL_TIME': full_time, 'PART_TIME': part_time}
     return obj
 
 
