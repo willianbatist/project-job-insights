@@ -2,14 +2,17 @@ from src.jobs import read
 
 
 def get_unique_job_types(path):
-    jobs = read(path)
+    jobss = read(path)
     jobs_title = []
-    for row in jobs:
+    valores = []
+    obj = {}
+    for row in jobss:
         if row['job_type'] != '':
             jobs_title.append(row['job_type'])
-            full_time = jobs_title.count('FULL_TIME')
-            part_time = jobs_title.count('PART_TIME')
-            obj = {'FULL_TIME': full_time, 'PART_TIME': part_time}
+
+    for dado in jobs_title:
+        if dado not in valores:
+            obj[dado] = jobs_title.count(dado)
     return obj
 
 
