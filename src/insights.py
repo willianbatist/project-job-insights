@@ -35,21 +35,18 @@ def filter_by_job_type(jobs, job_type):
 
 
 def get_unique_industries(path):
-    """Checks all different industries and returns a list of them
+    jobss = read(path)
+    industries = []
+    valores = []
+    obj = {}
+    for row in jobss:
+        if row['industry'] != '':
+            industries.append(row['industry'])
 
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    list
-        List of unique industries
-    """
-    return []
+    for dado in industries:
+        if dado not in valores:
+            obj[dado] = industries.count(dado)
+    return obj
 
 
 def filter_by_industry(jobs, industry):
