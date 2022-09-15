@@ -2,5 +2,5 @@ from src.counter import count_ocurrences
 
 
 def test_counter():
-    result = count_ocurrences("src/jobs.csv", "National Debt Relief")
-    assert(result == 413)
+    result = count_ocurrences("src/jobs.csv", "nat")
+    assert(result == 5912)
